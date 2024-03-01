@@ -24,7 +24,7 @@ max_epsilon = 1.0             # Máxima tasa de exploración
 min_epsilon = 0.01            # Mínima tasa de exploración
 decay_rate = 0.005            # Tasa de decaimiento exponencial para la exploración
 
-for episode in range(200):
+for episode in range(250):
     state = env.reset()[0]
     step = 0
     done = False
@@ -53,7 +53,7 @@ for episode in range(200):
     epsilon = min_epsilon + (max_epsilon - min_epsilon)*np.exp(-decay_rate*episode)
     
 print("Entrenamiento completado. Ejecutando el agente...")   
-cantEpisodes = 30 
+cantEpisodes = 60 
 cont = 0
 for episode in range(cantEpisodes):  # Número de episodios para la ejecución posterior
     state = env.reset()[0]

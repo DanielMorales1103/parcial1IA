@@ -52,9 +52,10 @@ for episode in range(200):
     # Reducir epsilon (porque necesitamos menos y menos exploración)
     epsilon = min_epsilon + (max_epsilon - min_epsilon)*np.exp(-decay_rate*episode)
     
-print("Entrenamiento completado. Ejecutando el agente...")    
+print("Entrenamiento completado. Ejecutando el agente...")   
+cantEpisodes = 30 
 cont = 0
-for episode in range(30):  # Número de episodios para la ejecución posterior
+for episode in range(cantEpisodes):  # Número de episodios para la ejecución posterior
     state = env.reset()[0]
     step = 0
     done = False
@@ -74,4 +75,4 @@ for episode in range(30):  # Número de episodios para la ejecución posterior
 
 # Cierra el entorno después de completar la ejecución
 env.close()
-print("Acierto de: ",cont/100)
+print("Acierto de: ",cont/cantEpisodes)

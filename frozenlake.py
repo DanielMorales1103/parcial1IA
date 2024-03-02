@@ -53,7 +53,7 @@ for episode in range(250):
     epsilon = min_epsilon + (max_epsilon - min_epsilon)*np.exp(-decay_rate*episode)
     
 print("Entrenamiento completado. Ejecutando el agente...")   
-cantEpisodes = 60 
+cantEpisodes = 70 
 cont = 0
 for episode in range(cantEpisodes):  # Número de episodios para la ejecución posterior
     state = env.reset()[0]
